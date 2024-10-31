@@ -1,3 +1,10 @@
+# https://github.com/romkatv/powerlevel10k/issues/1203#issuecomment-754805535
+# auto attach the 'ssh_tmux' session; muxt be put these lines at top of
+# zshrc, refer to the above link
+if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
+  tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
+fi
+
 #======================================================================
 # # Powerlevel10k:
 
